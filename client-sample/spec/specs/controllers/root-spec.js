@@ -4,8 +4,8 @@ describe('root', function () {
 
   var scope, ctrl, $httpBackend;
 
-
-  beforeEach(function(){module('developer-toolkit')});
+  beforeEach(module('phonecatServices'));
+  /*beforeEach(function(){module('developer-toolkit')});
 
   beforeEach(
     inject(function (_$httpBackend_, $rootScope, $controller) {
@@ -18,10 +18,10 @@ describe('root', function () {
         throw("Error with the controller: " + e);
       }
     })
-  );
+  );*/
 
   it('should work', function () {
-    expect(ctrl).toNotBe(null);
+    expect(ctrl).toNotBe(undefined);
   });
 
 });

@@ -18,6 +18,7 @@ module.exports = function (grunt) {
           js + '/developer-toolkit.js',
           js + '/controllers/**/*.js'],
         options: {
+          version: '1.2.0',
           specs: client + '/spec/specs/**/*-spec.js',
           template: client + '/spec/runner/angular-runner.tmpl'
         }
