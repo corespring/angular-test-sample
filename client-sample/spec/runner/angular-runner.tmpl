@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Jasmine Spec Runner</title>
+    <% var angularMock = "client-sample/spec/runner/components/angular-mocks/angular-mocks.js" %>
     <% css.forEach(function(style){ %>
     <link rel="stylesheet" type="text/css" href="<%= style %>">
     <% }) %>
@@ -12,7 +13,7 @@
     <script src="client-sample/spec/runner/components/underscore/underscore.js" type="text/javascript"></script>
     <script src="client-sample/spec/runner/components/angular-mocks/angular-mocks.js" type="text/javascript"></script>
     <% with (scripts) { %>
-    <% [].concat(jasmine, vendor, helpers, src, specs, reporters, start).forEach(function(script){ %>
+    <% [].concat(jasmine, angularMock, vendor, helpers, src, specs, reporters, start).forEach(function(script){ %>
     <script src="<%= script %>"></script>
     <% }) %>
     <% }; %>

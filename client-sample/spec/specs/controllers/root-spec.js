@@ -20,7 +20,7 @@ describe('root', function () {
   );
 
   it('should work', function () {
-    expect(ctrl).toNotBe(undefined);
+    expect(ctrl).toBe(undefined);
   });
 
 });
