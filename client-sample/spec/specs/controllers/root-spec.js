@@ -5,7 +5,7 @@ describe('root', function () {
   var scope, ctrl, $httpBackend;
 
 
-  beforeEach(module('developer-toolkit'));
+  beforeEach(function(){module('developer-toolkit')});
 
   beforeEach(
     inject(function (_$httpBackend_, $rootScope, $controller) {
