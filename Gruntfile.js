@@ -1,16 +1,12 @@
 module.exports = function (grunt) {
 
   var client = 'client-sample';
+  var bower = client + '/spec/bower_components';
+
   var js = client + '/assets/js';
 
   var config = {
     pkg: grunt.file.readJSON('package.json'),
-
-    shell: {
-      prepareTests: {
-        command: './'+client+'/spec/install-runner-dependencies ' + client + '/spec/runner'
-      }
-    },
 
     jasmine: {
       run: {
@@ -18,17 +14,21 @@ module.exports = function (grunt) {
           js + '/developer-toolkit.js',
           js + '/controllers/**/*.js'],
         options: {
-          version: '1.2.0',
           specs: client + '/spec/specs/**/*-spec.js',
-          template: client + '/spec/runner/angular-runner.tmpl'
+          keepRunner: true,
+          vendor: [
+            bower + '/angular/angular.js',
+            bower + '/angular-resource/angular-resource.js',
+            bower + '/angular-mocks/angular-mocks.js',
+
+          ]
         }
       }
     }
-  }
+  };
 
   grunt.initConfig(config);
   grunt.loadNpmTasks('grunt-contrib-jasmine');
-  grunt.loadNpmTasks('grunt-shell');
-  grunt.registerTask('test', [ 'shell:prepareTests', 'jasmine']);
+  grunt.registerTask('test', [ 'jasmine']);
 
-}
+};

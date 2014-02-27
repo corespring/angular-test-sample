@@ -1,4 +1,4 @@
-"use strict";
+/* global describe, beforeEach, module, */
 
 describe('root', function () {
 
@@ -20,7 +20,7 @@ describe('root', function () {
   );
 
   it('should work', function () {
-    expect(ctrl).toBe(undefined);
+    expect(ctrl).not.toBe(undefined);
   });
 
 });
